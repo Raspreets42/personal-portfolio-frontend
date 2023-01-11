@@ -1,0 +1,31 @@
+*{
+    font-size: 1.2vmax;
+}
+.aboutContainer{
+    width: 100%;
+    height: 70vh;
+}
+
+.aboutContainer , .innerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.myPic{
+    width: 8vmax;
+    height: 8vmax;
+}
+.myName{
+    font-size: 2vmax;
+}
+.mail , .mobile{
+    font-size: 1.4vmax;
+}
+#introduction2{
+    font-size: 1.2vmax;
+}
+a{
+    text-decoration: none;
+    color: black;
+}

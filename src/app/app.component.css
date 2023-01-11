@@ -1,0 +1,42 @@
+
+.nav-item , .navbar-brand{
+    margin: 0.1vmax 1vmax;
+}
+.navbar , .footer , a{
+    text-decoration: none;
+    color: rgb(190, 189, 189);
+}
+.nav-link:hover{
+    color: rgb(252, 252, 119);
+}
+.footerSection{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.footer{
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+
+    font-size: 1.2vmax;
+}
+.text-uppercase{
+    font-size: 1.5vmax;
+}
+.linkedin{
+    width: 2vmax;
+    height: 2vmax;
+}
+.mail{
+    color: rgb(253, 21, 21);
+}
+.call{
+    color: rgb(2, 173, 2);
+}
+.github{
+    width: 1.5vmax;
+    height: 1.5vmax;
+    background-color: white;
+}

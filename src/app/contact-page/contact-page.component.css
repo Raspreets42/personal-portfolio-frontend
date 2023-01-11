@@ -1,0 +1,27 @@
+*{
+    font-size: 1vmax;
+}
+.contactContainer{
+    margin: auto;
+    height: 70vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.formContainer {
+    border-radius: 0.5vmax;
+    padding: 0.5vmax;
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    width: 40vmax;
+}
+
+.form-group{
+    width: 30vmax;
+}
+.mat-icon{
+    font-size: 1.2vmax;
+    height: 0.9vmax;
+    font-weight: bold;
+}

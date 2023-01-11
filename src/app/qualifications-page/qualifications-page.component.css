@@ -1,0 +1,118 @@
+*{
+    font-size: 1vmax;
+}
+.school{
+    display: block;
+}
+
+:root{
+    --colorPrincipal: #7DB4B5;
+    --colorSecundario: #680148;
+    --colorSombra: rgba(125, 180, 181, 0.2)
+}
+
+h3{
+    font-size: 1vmax;
+    font-weight: 600;
+}
+
+h2{
+    font-size: 1vmax;
+    text-transform: uppercase;
+    /* padding: 0.2vmax 0; */
+    letter-spacing: 0.1vmax;
+    color: var(--colorPrincipal);
+}
+
+/*Timeline*/
+.timeline{
+    position: relative;
+    margin: 0.8vmax auto;
+    padding: 0.6vmax 0;
+    width: 100%;
+}
+
+.timeline::before{
+    content: '';
+    position: absolute;
+    left: 50%;
+    width: 0.15vmax;
+    height: 95%;
+    background-color: #e4e4e4;
+}
+
+.timeline ul li:hover .time{
+    transform: scale(1.1);
+}
+
+/*Elementos de lista*/
+.timeline ul li{
+    list-style: none;
+    position: relative;
+    width: 50%;
+    padding: 1vmax 2vmax;
+}
+
+.timeline ul li:nth-child(odd){
+    float: left;
+    text-align: right;
+    clear: both;
+}
+
+.timeline ul li:nth-child(even){
+    float: right;
+    text-align: left;
+    clear: both;
+}
+
+/*Circulo indicador*/
+.timeline ul li::before{
+    content: '';
+    position: absolute;
+    top: 2vmax;
+    width: 0.7vmax;
+    height: 0.7vmax;
+    background-color: rgb(78, 119, 252);
+    border-radius: 50%;
+    box-shadow: 0 0 0 0.2vmax var(--colorSombra);
+}
+
+.timeline ul li:nth-child(odd)::before{
+    right: 10.5px;
+}
+
+.timeline ul li:nth-child(even)::before{
+    left: -20px;
+}
+
+.timeline ul li:hover::before{
+    transform: scale(1.5);
+}
+
+/*Fecha*/
+.time{
+    display: inline-block;
+    font-weight: 400;
+    font-size: 1vmax;
+    padding: 0.3vmax 0.7vmax;
+    margin-bottom: 1vmax;
+    background-color: #E0EFF1;
+    color: var(--colorSecundario);
+    border-radius: 1.2vmax;
+    box-shadow: 0 0 0 0.2vmax var(--colorSombra);
+}
+
+/*Contenido*/
+.content{
+    padding-right: 1.6vmax;
+}
+
+.timeline ul li h2{
+    font-weight: 500;
+    color: var(--colorPrincipal);
+}
+
+.timeline ul li p{
+    margin: 0.8vmax 0;
+    font-weight: 300;
+}

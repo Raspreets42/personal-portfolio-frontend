@@ -1,0 +1,25 @@
+*{
+    font-size: 1vmax;
+}
+.homeContainer{
+    width: 100%;
+    height: 70vh;
+}
+.homeContainer , .innerContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.mypic{
+    width: 18vmax;
+    height: 18vmax;
+}
+.myName{
+    font-size: 2.5vmax;
+    font-weight: bold;
+    font-style: italic;
+}
+.summury , .interests{
+    font-size: 1.5vmax;
+}

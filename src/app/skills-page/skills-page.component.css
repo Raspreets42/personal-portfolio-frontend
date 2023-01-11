@@ -1,0 +1,17 @@
+*{
+    font-size: 1vmax;
+    font-weight: bold;
+}
+.skillsContainer{
+    margin-top: 10vmax;
+}
+mat-panel-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.mat-icon{
+    font-size: 1.2vmax;
+    height: 1.1vmax;
+    color: rgb(240, 6, 240);
+}
