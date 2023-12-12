@@ -1,0 +1,31 @@
+.projectDialogContainer{
+  width:40vmax;
+  height: 30vmax;
+  font-size: 1vmax;
+}
+
+.dialogBody{
+  height: 18vmax;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.dialogHeader{
+  font-size: 1.4vmax;
+}
+
+.roleTech{
+  font-size: 1.2vmax;
+}
+
+.dialogFooter{
+  position: absolute;
+  bottom: 10px;
+  right: 20px;
+}
+
+.btn-warning{
+  padding: 5px 10px;
+  margin: 0;
+  font-size: 1vmax !important;
+}

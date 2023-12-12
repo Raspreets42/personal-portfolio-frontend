@@ -1,43 +1,59 @@
 <div class="container skillsContainer">
-    <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <mat-icon> code </mat-icon> Skills
-                    </mat-panel-title>
-                    <mat-panel-description>
-                        Skills I have are mentioned here
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-                <h6> C++ and Python</h6>
-                <hr>
-                <h6> HTML , CSS & Javascript </h6>
-                <hr>
-                <h6> React & Angular </h6>
-                <hr>
-                <h6> Node and Djnago </h6>
-
-            </mat-expansion-panel>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+      <mat-expansion-panel #panel1 (click)="panel2.expanded = false ; panel3.expanded = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon> code</mat-icon>
+            Skills
+          </mat-panel-title>
+          <mat-panel-description>
+            Skills I have are mentioned here
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngFor="let lang of programmingLanguage;let i=index">
+          <h6> {{lang}} </h6>
+          <hr *ngIf="i !== (programmingLanguage.length-1)">
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
-            <mat-expansion-panel>
-                <mat-expansion-panel-header>
-                    <mat-panel-title>
-                        <mat-icon> build </mat-icon> Tools
-                    </mat-panel-title>
-                    <mat-panel-description>
-                        Tools I know and use on a daily basis
-                    </mat-panel-description>
-                </mat-expansion-panel-header>
-                <h6> Git & Github </h6>
-                <hr>
-                <h6> Postman </h6>
-                <hr>
-                <h6> VS Code , Pycharm</h6>
-                <hr>
-                <h6> Docker </h6>
-            </mat-expansion-panel>
-        </div>
+      </mat-expansion-panel>
     </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+      <mat-expansion-panel #panel2 (click)="panel1.expanded = false ; panel3.expanded = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon> code</mat-icon>
+            Framework
+          </mat-panel-title>
+          <mat-panel-description>
+            Frameworks I use on a daily basis
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngFor="let frame of technologiesOrFrameworks;let i=index">
+          <h6> {{frame}} </h6>
+          <hr *ngIf="i !== (technologiesOrFrameworks.length-1)">
+        </div>
+      </mat-expansion-panel>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 mt-3">
+      <mat-expansion-panel #panel3 (click)="panel1.expanded = false ; panel2.expanded = false">
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+            <mat-icon> build</mat-icon>
+            Tools
+          </mat-panel-title>
+          <mat-panel-description>
+            Tools I know and use on a daily basis
+          </mat-panel-description>
+        </mat-expansion-panel-header>
+        <div *ngFor="let tool of tools;let i=index">
+          <h6> {{tool}} </h6>
+          <hr *ngIf="i !== (tools.length-1)">
+        </div>
+      </mat-expansion-panel>
+    </div>
+  </div>
 </div>

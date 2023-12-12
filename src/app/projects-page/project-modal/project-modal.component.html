@@ -1,0 +1,31 @@
+<div class="container projectDialogContainer" *ngIf="selectedProject">
+  <h3 class="text-center dialogHeader my-3">{{selectedProject.projectName}}</h3>
+  <hr>
+  <div class="dialogBody">
+    <div class="row roleTech mx-1" style="margin-bottom: 10px;">
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+        <span> Role : {{selectedProject.projectRole}}</span>
+      </div>
+      <div class="col-12 col-sm-12 col-md-6 col-lg-6">
+        <span> Technologies : {{selectedProject.projectSkills.join(' | ')}}</span>
+      </div>
+    </div>
+    <ul>
+      <li *ngFor="let resp of projectResponsibility">{{resp}}</li>
+    </ul>
+    <div class="row mx-2">
+      <span *ngIf="selectedProject.projectDeployedLink">
+        <b>Project Link : </b>
+        <a [href]="selectedProject.projectDeployedLink" target="_blank">{{selectedProject.projectDeployedLink}}</a>
+        </span>
+      <span *ngIf="!selectedProject.projectDeployedLink">
+        <b>Project Link : </b>
+        <a [href]="selectedProject.projectGitLink" target="_blank">{{selectedProject.projectGitLink}}</a>
+      </span>
+    </div>
+  </div>
+  <div class="dialogFooter">
+    <button class="btn btn-warning" (click)="closeDialog()">Cancel</button>
+  </div>
+
+</div>

@@ -1,31 +1,28 @@
 <div class="container aboutContainer" >
     <div class="row">
-        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
-            <strong class="myName">I'm Raspreet Singh Pasrija ,</strong>
-            <p id="introduction1">
-                Graduated in Bachelor of Engineering in Computer Science. I'm an aspiring Full-stack developer & I love exploring and building projects using various technologies.
+        <div class="col-xs-12 col-sm-12 col-md-5 col-lg-5" *ngIf="personalInfo && aboutPageDescription">
+            <strong class="myName">I'm {{personalInfo.name}} ,</strong>
+            <p id="introduction1" *ngFor="let description of aboutPageDescription">
+                {{description}}
             </p>
-            <p id="introduction2">
-                Currently I'm working as an <strong>SDE Trainee</strong> at <strong>Click2Cloud Inc.</strong>
-            </p>
-            <a class="btn btn-warning" [href]="myResume" download="">Resume <img [src]="downloadResume" alt="downloadResume"> </a>
+            <a class="btn btn-warning" [href]="resumeLink" target="_blank">Resume</a>
         </div>
-        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 innerContainer">
+        <div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 innerContainer" *ngIf="personalInfo">
             <div class="myLogo">
                 <img [src]="myLogo" class="card-img-top" alt="..." class="myPic">
             </div>
-            <h4 class="mt-2 myName">Raspreet Singh Pasrija</h4>
+            <h4 class="mt-2 myName">{{personalInfo.name}}</h4>
             <div class="mailMobile">
-                <a class="mail" href="mailto:raspreetsp04@gmail.com" target="_blank">
-                    raspreetsp04@gmail.com
+                <a class="mail" [href]="emailHref" target="_blank">
+                  {{personalInfo.email}}
                 </a>
                 <strong> &nbsp; | &nbsp; </strong>
-                <a class="mobile" href="tel:+918962942505" target="_blank">
-                    +918962942505
+                <a class="mobile" [href]="telHref" target="_blank">
+                    {{personalInfo.mobile}}
                 </a>
             </div>
             <div class="address">
-                Than Khamaria, Bemetara, Chhattisgarh - 491338
+              {{personalInfo.currentLocation}}
             </div>
         </div>
     </div>

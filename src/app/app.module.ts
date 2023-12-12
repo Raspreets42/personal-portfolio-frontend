@@ -19,6 +19,8 @@ import { MatExpansionModule } from "@angular/material/expansion";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatIconModule } from "@angular/material/icon";
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ProjectModalComponent } from './projects-page/project-modal/project-modal.component';
+import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -29,10 +31,11 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     SkillsPageComponent,
     ProjectsPageComponent,
     ContactPageComponent,
+    ProjectModalComponent,
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule , 
+    AppRoutingModule ,
     FormsModule,
     HttpClientModule,
     ReactiveFormsModule,
@@ -42,9 +45,12 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     MatButtonModule,
     MatExpansionModule,
     MatFormFieldModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule
   ],
-  providers: [],
+  providers: [
+    {provide: MAT_DIALOG_DEFAULT_OPTIONS, useValue: {hasBackdrop: false}}
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

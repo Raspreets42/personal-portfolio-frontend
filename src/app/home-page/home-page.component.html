@@ -3,11 +3,10 @@
         <div class="col-12 col-md-6 col-sm-6 innerContainer">
             <img [src]="myLogo" alt="Not Found" class="mypic">
         </div>
-        <div class="col-12 col-md-6 col-sm-6 innerContainer">
-            <span class="text-muted" style="font-weight: bold;" id="muted">HELLO ! </span>
-            <h3 class="myName">I am <strong class="myName">Raspreet singh Pasrija</strong></h3>
-            <h4 class="summury">Determined hard-worker with the experience in developing software applications.</h4>
-            <h5 class="interests">Long term interests include web applications and stock markets.</h5>
+        <div class="col-12 col-md-6 col-sm-6 innerContainer" *ngIf="personalInfo && homePageDescription">
+            <span class="text-muted" style="font-weight: bold;" id="muted">Welcome to my portfolio ! </span>
+            <h3 class="myName">I am <strong class="myName">{{personalInfo.name}}</strong></h3>
+            <h4 class="summury" *ngFor="let description of homePageDescription">{{description}}</h4>
         </div>
     </div>
 </div>

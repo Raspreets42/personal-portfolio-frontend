@@ -3,7 +3,12 @@
     font-weight: bold;
 }
 .skillsContainer{
-    margin-top: 10vmax;
+    margin-top: 6vmax;
+}
+.row{
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 mat-panel-title{
     display: flex;

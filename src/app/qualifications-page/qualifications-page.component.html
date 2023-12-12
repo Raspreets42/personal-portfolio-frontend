@@ -1,37 +1,23 @@
 <div class="container">
     <mat-tab-group>
-        <mat-tab label="Education"> 
+        <mat-tab label="Education">
             <div class="container scrolling">
                 <div class="timeline">
                     <ul>
-                        <li>
+                        <li *ngFor="let edu of educationalDetails;">
                             <div class="content">
                                 <div class="time">
-                                    <h3>2015 - 2016</h3>
+                                    <h3>{{edu.startDate | date: 'MMM yyyy'}} - {{edu.endDate | date: 'MMM yyyy'}}</h3>
                                 </div>
-                                <h2>Secondary School Certification</h2>
-                                <strong class="school">Academic World School</strong>
-                                <span>Board : CBSE <strong> &nbsp; | &nbsp; </strong> CGPA : 8.8</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="content">
-                                <div class="time">
-                                    <h3>2017 - 2018</h3>
-                                </div>
-                                <h2>Higher Secondary School Certification</h2>
-                                <strong class="school">Academic World School</strong>
-                                <span>Board : CBSE <strong> &nbsp; | &nbsp; </strong> Percentage : 58%</span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="content">
-                                <div class="time">
-                                    <h3>2018 - 2022</h3>
-                                </div>
-                                <h2>Bachelor of Engineering</h2>
-                                <strong class="school">Rungta College of Engineering and Technology</strong>
-                                <span>University : CSVTU <strong> &nbsp; | &nbsp; </strong> Percentage : 76%</span>
+                                <h2>{{edu.courseName}}</h2>
+                                <strong class="school">{{edu.schoolCollegeName}}</strong>
+                                <span>
+                                  <span *ngIf="edu.boardUniversityName === 'CBSE'">Board : {{edu.boardUniversityName}}</span>
+                                  <span *ngIf="edu.boardUniversityName !== 'CBSE'">University : {{edu.boardUniversityName}}</span>
+                                  <strong> &nbsp; | &nbsp; </strong>
+                                  <span *ngIf="edu.percentage.includes('CGPA')">CGPA : {{edu.percentage}}</span>
+                                  <span *ngIf="!edu.percentage.includes('CGPA')">Percentage : {{edu.percentage}}</span>
+                                </span>
                             </div>
                         </li>
                         <div style="clear: both;"></div>
@@ -43,24 +29,14 @@
             <div class="container ">
                 <div class="timeline ">
                     <ul>
-                        <li>
+                        <li *ngFor="let work of workDetails">
                             <div class="content">
                                 <div class="time">
-                                    <h3>May 2021 - July 2021</h3>
+                                    <h3>{{work.startDate}} - {{work.endDate}}</h3>
                                 </div>
-                                <h2> Web Development Intern </h2>
-                                <strong class="school">Verzeo</strong>
-                                <span>Javascript<strong> &nbsp; | &nbsp; </strong> React </span>
-                            </div>
-                        </li>
-                        <li>
-                            <div class="content">
-                                <div class="time">
-                                    <h3>Sept 2022 - Present</h3>
-                                </div>
-                                <h2> SDE Trainee </h2>
-                                <strong class="school">Click2Cloud Inc.</strong>
-                                <span>Angular<strong> &nbsp; | &nbsp; </strong> Node</span>
+                                <h2> {{work.designation}} </h2>
+                                <strong class="school">{{work.organization}}</strong>
+                                <span>{{work.skillset}}</span>
                             </div>
                         </li>
                         <div style="clear: both;"></div>

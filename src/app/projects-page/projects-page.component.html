@@ -1,26 +1,15 @@
 <div class="container ProjectContainer">
-    <div class="card">
-        <img class="card-img-top" [src]="accountingImg" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Accounting Application</h5>
-            <p class="card-text">This is an Accounting application build on <strong>Python</strong> and <strong>MySQL</strong> to store the data.</p>
-            <button class="btn btn-warning" (click)="accountingDetails()"> Details <mat-icon> subdirectory_arrow_right </mat-icon> </button>
-        </div>
+  <div class="card" *ngFor="let proj of projectDetails;">
+    <div class="card-header">
+      {{proj.projectName}}
     </div>
-    <div class="card">
-        <img class="card-img-top" [src]="weatherImg" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">Weather Application</h5>
-            <p class="card-text">This is a Weather web Application build on <strong>node.js</strong> and <strong>API's</strong> are used to get data.</p>
-            <button class="btn btn-warning" (click)="weatherDetails()"> Details <mat-icon> subdirectory_arrow_right </mat-icon> </button>
-        </div>
+    <div class="card-body">
+      <p class="card-text">{{proj.projectDescription}}</p>
     </div>
-    <div class="card">
-        <img class="card-img-top" [src]="cafeImg" alt="Card image cap">
-        <div class="card-body">
-            <h5 class="card-title">SinghCafe Application</h5>
-            <p class="card-text">This is a web application build on <strong>react.js </strong>. It's an static and responsive website.</p>
-            <button class="btn btn-warning" (click)="cafeDetails()"> Details <mat-icon> subdirectory_arrow_right </mat-icon> </button>
-        </div>
+    <div class="card-footer">
+      <button class="btn btn-warning" (click)="moreDetails(proj)"> Details
+        <mat-icon> subdirectory_arrow_right</mat-icon>
+      </button>
     </div>
+  </div>
 </div>

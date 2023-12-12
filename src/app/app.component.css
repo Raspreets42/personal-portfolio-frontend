@@ -9,6 +9,9 @@
 .nav-link:hover{
     color: rgb(252, 252, 119);
 }
+.nav-link-active{
+  color: rgb(252, 252, 119);
+}
 .footerSection{
     display: flex;
     justify-content: center;
