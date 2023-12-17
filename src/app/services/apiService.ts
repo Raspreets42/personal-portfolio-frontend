@@ -10,30 +10,30 @@ export class ApiService { // Replace with your API endpoint
   }
 
   getPersonalInformation(): any{
-    return this.http.get('http://localhost:3000/api/getPersonalInformation');
+    return this.http.get(`https://node-api-services.onrender.com` + '/api/getPersonalInformation');
   }
 
   getAboutInformation(): any{
-    return this.http.get('http://localhost:3000/api/getAboutInformation');
+    return this.http.get(`https://node-api-services.onrender.com` + '/api/getAboutInformation');
   }
 
   getEducationInformation(): any{
-    return this.http.get('http://localhost:3000/api/getEducationInformation');
+    return this.http.get(`https://node-api-services.onrender.com` + '/api/getEducationInformation');
   }
 
   getWorkInformation(): any{
-    return this.http.get('http://localhost:3000/api/getWorkInformation');
+    return this.http.get(`https://node-api-services.onrender.com` + '/api/getWorkInformation');
   }
 
   getSkillsInformation(): any{
-    return this.http.get('http://localhost:3000/api/getSkillsInformation');
+    return this.http.get(`https://node-api-services.onrender.com` + '/api/getSkillsInformation');
   }
 
   getProjectInformation(): any{
-    return this.http.get('http://localhost:3000/api/getProjectInformation');
+    return this.http.get(`https://node-api-services.onrender.com` + '/api/getProjectInformation');
   }
 
   postFeedback(obj: any): any{
-    return this.http.post(`http://localhost:3000/api/submitContact`,obj);
+    return this.http.post(`https://node-api-services.onrender.com` + `/api/submitContact`,obj);
   }
 }

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ApiService } from '../services/apiService';
+// import {NgxSpinnerService} from "ngx-spinner";
 
 @Component({
   selector: 'app-home-page',
@@ -10,6 +11,7 @@ export class HomePageComponent {
   myLogo = '../../assets/images/mylogo.png';
 
   constructor( private apiService: ApiService){
+  // private spinner: NgxSpinnerService
   }
 
   personalInfo: any;
@@ -21,11 +23,15 @@ export class HomePageComponent {
   }
 
   async getPersonalInformationFunc(){
+    // this.spinner.show();
     const personalInfo = await this.apiService.getPersonalInformation().toPromise();
     this.personalInfo = personalInfo.details[0];
+    // this.spinner.hide();
   }
   async getAboutInformationFunc(){
+    // this.spinner.show();
     const aboutInfo = await this.apiService.getAboutInformation().toPromise();
     this.homePageDescription = aboutInfo.details[0].homeScreenDescription.split('</p>');
+    // this.spinner.hide();
   }
 }
